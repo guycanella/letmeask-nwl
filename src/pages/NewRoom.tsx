@@ -4,6 +4,7 @@ import LogoImg from 'src/assets/images/logo.svg'
 import Button from 'src/components/Button'
 
 export const NewRoom = () => {
+
   return (
     <div className="home-container">
       <aside>
