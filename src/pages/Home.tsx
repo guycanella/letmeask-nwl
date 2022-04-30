@@ -12,13 +12,13 @@ export const Home = () => {
 			</aside>
 			<main>
         <img src={LogoImg} alt="Logo LetMeAsk" />
-        <button>
+        <button className="google-btn">
           <img src={GoogleImg} alt="Logo do Google" />
           Crie sua sala com o Google
         </button>
-        <hr />
-        <input type="text" placeholder='Digite o código da sala' />
-        <button type='submit'>
+        <div className="separator">ou entre em uma sala</div>
+        <input type="text" className="neonBorder" placeholder='Digite o código da sala' />
+        <button type='submit' className="custom-btn">
           <img src="" alt="" />
           Entrar na sala
         </button>
