@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { database } from "../services/firebase"
+import { database } from "src/services/firebase"
 
 type QuestionProps = {
 	id: string;
