@@ -2,6 +2,7 @@ import { FormEvent, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Button from "src/components/Button";
 import RoomCode from "src/components/RoomCode";
+import Question from "src/components/Question";
 import { useAuth } from "src/hooks/useAuth";
 import { database } from "src/services/firebase";
 
@@ -128,7 +129,15 @@ export const Room = () => {
 					</div>
 				</form>
 
-				{JSON.stringify(questions)}
+				{questions.map((question, idx) => {
+					return (
+						<Question
+							key={idx}
+							content={question.content}
+							author={question.author}
+						/>
+					);
+				})}
 			</main>
 		</div>
 	);
