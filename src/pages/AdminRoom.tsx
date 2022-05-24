@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import Button from "src/components/Button";
 import RoomCode from "src/components/RoomCode";
 import Question from "src/components/Question";
@@ -19,6 +19,15 @@ export const AdminRoom = () => {
 	const roomId = params.id;
 
 	const { questions, title } = useRoom(roomId!);
+	const navigate = useNavigate();
+
+	const handleEndRoom = async () => {
+		await database.ref(`rooms/${roomId}`).update({
+			endedAt: new Date(),
+		});
+
+		navigate("/", { replace: true });
+	};
 
 	const handleDeleteQuestion = async (questionId: string) => {
 		if (window.confirm("Tem certeza que deseja excluir essa pergunta?")) {
@@ -33,7 +42,9 @@ export const AdminRoom = () => {
 					<img src={logoImg} alt="LetMeAsk" />
 					<div>
 						<RoomCode code={roomId} />
-						<Button isOutlined>Encerrar sala</Button>
+						<Button onClick={handleEndRoom} isOutlined>
+							Encerrar sala
+						</Button>
 					</div>
 				</div>
 			</header>
