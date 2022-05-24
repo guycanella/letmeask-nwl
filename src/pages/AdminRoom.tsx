@@ -79,6 +79,8 @@ export const AdminRoom = () => {
 							key={idx}
 							content={question.content}
 							author={question.author}
+							isAnswered={question.isAnswered}
+							isHighlighted={question.isHighlighted}
 						>
 							<button
 								type="button"
