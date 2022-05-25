@@ -104,4 +104,67 @@
 			}
 		}
 	}
+
+	@media all and (min-width: 768px) and (max-width: 1024px) {
+		padding: 0 5%;
+
+		header {
+			padding: 14px 0;
+		}
+
+		main {
+			.room-title {
+				h1,
+				span {
+					font-size: 14px;
+				}
+			}
+
+			form {
+				.form-footer {
+					gap: 10px;
+
+					& > button {
+						width: 30%;
+					}
+				}
+			}
+		}
+	}
+
+	@media all and (min-width: 320px) and (max-width: 767px) {
+		padding: 0 5%;
+
+		header {
+			padding: 14px 0;
+
+			.content {
+				outline: 1px solid red;
+
+				& > div {
+					button {
+						outline: 2px solid black;
+						width: 10%;
+					}
+				}
+			}
+		}
+
+		main {
+			.room-title {
+				h1,
+				span {
+					font-size: 14px;
+				}
+			}
+
+			form {
+				.form-footer {
+					flex-direction: column;
+					align-items: flex-start;
+					gap: 10px;
+				}
+			}
+		}
+	}
 }
