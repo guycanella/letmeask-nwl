@@ -38,19 +38,15 @@ export const AdminRoom = () => {
 	};
 
 	const handleCheckQuestionAnswered = async (questionId: string) => {
-		if (window.confirm("Tem certeza que deseja excluir essa pergunta?")) {
-			await database.ref(`rooms/${roomId}/questions/${questionId}`).update({
-				isAnswered: true,
-			});
-		}
+		await database.ref(`rooms/${roomId}/questions/${questionId}`).update({
+			isAnswered: true,
+		});
 	};
 
 	const handleHighlightQuestion = async (questionId: string) => {
-		if (window.confirm("Tem certeza que deseja excluir essa pergunta?")) {
-			await database.ref(`rooms/${roomId}/questions/${questionId}`).update({
-				isHighlighted: true,
-			});
-		}
+		await database.ref(`rooms/${roomId}/questions/${questionId}`).update({
+			isHighlighted: true,
+		});
 	};
 
 	return (
